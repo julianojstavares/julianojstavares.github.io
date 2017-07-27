@@ -1,36 +1,65 @@
-*{
-	font-size: 1.2rem;
-	font-family: sans-serif;
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
-html {
-	min-height: 100%;
+/* start - flexbox container*/
+html, body, .box, .svg-container {
 	display: flex;
+ 	flex-wrap: wrap;
+ 	justify-content: center;
+}
+/* end - flexbox container*/
+
+/* start - flexbox child*/
+body, .box, .svg-container {
+	align-content: center;
+	align-items: center;
+}
+/*end - flexbox child*/
+
+/*start - relative vs absolute*/
+body {
+	position: relative;
+}
+
+.svg-container {
+	position: absolute;
+}
+/*end - relative vs absolute*/
+
+html {
+	border: 5px dashed blue;
+	background-color: #bfc5ff;
+	height: 100%;
 }
 
 body {
 	border: 5px solid red;
+	background-color: #ffbfbf;
 	margin: 0;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+	flex: 1 1 auto;
 }
 
-div {
-	border: 5px solid black;
-	background-color: rgba(255,255,255, 0.7);
-	position: absolute;
-	display: flex;
-	flex-flow: column;
-	padding: 0.5em;
+.box {
+	border: 3px solid black;
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 60%;
+	height: 60%;
+	z-index: 2;
 }
 
-p {
-	border: 1px solid green;
-	margin: auto;
+.svg-container {
+	border: 3px solid green;
 }
 
+.svg-container, #axys {
+	width: 100%;
+	height: 100%;
+}
+
+/*
 .btn {
 	background: #29ABE2;
 	background-image: -webkit-linear-gradient(top, #29ABE2, #0000FF);
@@ -40,9 +69,7 @@ p {
 	background-image: linear-gradient(to bottom, #29ABE2, #0000FF);
 	-webkit-border-radius: 27;
 	-moz-border-radius: 27;
-	border-radius: 27px;
-	padding: 1em;
-	margin: 0.5em 10em 0em 10em;
 	border: solid #000000 5px;
-	text-decoration: none;
+	padding: 0.1em 3em;
 }
+*/
