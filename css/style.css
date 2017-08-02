@@ -5,44 +5,53 @@
 }
 
 /* start - flexbox container*/
-html, body, .box, .svg-container {
+html, body, .svg-container, .box {
 	display: flex;
  	flex-wrap: wrap;
  	justify-content: center;
+ 	margin: 0;
 }
 /* end - flexbox container*/
 
 /* start - flexbox child*/
-body, .box, .svg-container {
+body, .box {
 	align-content: center;
 	align-items: center;
+}
+
+body, #axys {
+	flex: 1 1 auto;
 }
 /*end - flexbox child*/
 
 /*start - relative vs absolute*/
 body {
-	position: relative;
+	position: relative; /*to the child svg-container*/
+}
+.svg-container {
+	position: relative; /*to the child arrow*/
+	position: absolute; /*to the parent body*/
 }
 
-.svg-container, #arrow {
-	position: absolute;
+#arrow {
+	position: absolute; /*to the parent svg-container*/
 }
 /*end - relative vs absolute*/
 
+html, #axys {
+	height: 100%;
+}
+
 html {
 	border: 5px dashed blue;
-	height: 100%;
 }
 
 body {
 	border: 5px solid red;
-	margin: 0;
-	flex: 1 1 auto;
 }
 
 .box {
 	border: 3px solid black;
-
 	width: 60%;
 	height: 60%;
 	z-index: 2;
@@ -55,9 +64,12 @@ body {
 }
 
 #axys {
-	width: 98%;
-	height: 98%;
-	background-color: pink;
+	padding: 15px;
+}
+
+#arrow {
+	width: 30px;
+	height: 30px;
 }
 
 .aTop {
@@ -69,19 +81,41 @@ body {
 }
 
 .aBottom {
-	bottom: 0; margin-bottom: 28px;
+	bottom: 0;
 }
 
 .aLeft {
 	left: 0;
 }
 
-.aTop, .aBottom {
-	height: 0;
-	transform: translateX(-0.9px);
+.aRight, .aLeft {
+	top: 50%;
+	transform: translateY(-50%);
 }
 
-.aRight, .aLeft {
-	transform: translateY(-17.5px);
-	top: 50%;
+/* start - svg styles*/
+#axys line {
+	stroke-width: 5;
 }
+
+#axys :first-child {
+	stroke: rgba(255, 0, 0, .9);
+}
+
+#axys :last-child {
+	stroke: rgba(38, 255, 0, .9);
+}
+
+#arrow polygon {
+	stroke: black;
+	stroke-width: 4;
+}
+
+.aTop, .aBottom polygon {
+	fill: rgba(38, 255, 0, .9);
+}
+
+.aLeft, .aRight polygon {
+	fill: rgba(255, 0, 0, .9);
+}
+/* end - svg styles*/
