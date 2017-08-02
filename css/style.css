@@ -57,46 +57,31 @@ body {
 #axys {
 	width: 98%;
 	height: 98%;
-
 	background-color: pink;
 }
 
 .aTop {
-	background-color: blue;
-	top: 0; height: 0;
-	transform: translateX(-3%);
+	top: 0;
 }
 
 .aRight {
-	right: 0; top: 50%;
-	transform: translateY(-44.5%);
+	right: 0; 
 }
 
 .aBottom {
-	background-color: red;
-	bottom: 0; height: 0; margin-bottom: 30px;
-	transform: translateX(-3%);
+	bottom: 0; margin-bottom: 28px;
 }
 
 .aLeft {
-	left: 0; top: 50%;
+	left: 0;
+}
+
+.aTop, .aBottom {
+	height: 0;
+	transform: translateX(-2.7%);
+}
+
+.aRight, .aLeft {
 	transform: translateY(-44.5%);
+	top: 50%;
 }
-
-svg {
-}
-
-/*
-.btn {
-	background: #29ABE2;
-	background-image: -webkit-linear-gradient(top, #29ABE2, #0000FF);
-	background-image: -moz-linear-gradient(top, #29ABE2, #0000FF);
-	background-image: -ms-linear-gradient(top, #29ABE2, #0000FF);
-	background-image: -o-linear-gradient(top, #29ABE2, #0000FF);
-	background-image: linear-gradient(to bottom, #29ABE2, #0000FF);
-	-webkit-border-radius: 27;
-	-moz-border-radius: 27;
-	border: solid #000000 5px;
-	padding: 0.1em 3em;
-}
-*/
