@@ -78,10 +78,10 @@ body {
 
 .aTop, .aBottom {
 	height: 0;
-	transform: translateX(-2.7%);
+	transform: translateX(-0.9px);
 }
 
 .aRight, .aLeft {
-	transform: translateY(-44.5%);
+	transform: translateY(-17.5px);
 	top: 50%;
 }
