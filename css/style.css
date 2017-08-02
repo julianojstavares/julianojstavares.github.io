@@ -24,27 +24,25 @@ body {
 	position: relative;
 }
 
-.svg-container {
+.svg-container, #arrow {
 	position: absolute;
 }
 /*end - relative vs absolute*/
 
 html {
 	border: 5px dashed blue;
-	background-color: #bfc5ff;
 	height: 100%;
 }
 
 body {
 	border: 5px solid red;
-	background-color: #ffbfbf;
 	margin: 0;
 	flex: 1 1 auto;
 }
 
 .box {
 	border: 3px solid black;
-	background-color: rgba(255, 255, 255, 0.5);
+
 	width: 60%;
 	height: 60%;
 	z-index: 2;
@@ -52,11 +50,40 @@ body {
 
 .svg-container {
 	border: 3px solid green;
+	width: 100%;
+	top: 0; bottom: 0;
 }
 
-.svg-container, #axys {
-	width: 100%;
-	height: 100%;
+#axys {
+	width: 98%;
+	height: 98%;
+
+	background-color: pink;
+}
+
+.aTop {
+	background-color: blue;
+	top: 0; height: 0;
+	transform: translateX(-3%);
+}
+
+.aRight {
+	right: 0; top: 50%;
+	transform: translateY(-44.5%);
+}
+
+.aBottom {
+	background-color: red;
+	bottom: 0; height: 0; margin-bottom: 30px;
+	transform: translateX(-3%);
+}
+
+.aLeft {
+	left: 0; top: 50%;
+	transform: translateY(-44.5%);
+}
+
+svg {
 }
 
 /*
