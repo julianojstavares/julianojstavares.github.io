@@ -17,6 +17,7 @@ html, body, .svg-container, .box {
 body, .box {
 	align-content: center;
 	align-items: center;
+	flex-flow: column;
 }
 
 body, #axys {
@@ -26,15 +27,15 @@ body, #axys {
 
 /*start - relative vs absolute*/
 body {
-	position: relative; /*to the child svg-container*/
+	position: relative; /*to the child*/
 }
 .svg-container {
-	position: relative; /*to the child arrow*/
-	position: absolute; /*to the parent body*/
+	position: relative; /*to the child*/
+	position: absolute; /*to the parent*/
 }
 
-#arrow {
-	position: absolute; /*to the parent svg-container*/
+.arrow, #xScreen, #yScreen {
+	position: absolute; /*to the parent*/
 }
 /*end - relative vs absolute*/
 
@@ -43,52 +44,49 @@ html, #axys {
 }
 
 html {
-	border: 5px dashed blue;
+	min-height: 319px;
+	min-width: 479px;	
+}
+
+html {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 body {
 	border: 5px solid red;
 }
 
-.box {
-	border: 3px solid black;
-	width: 60%;
-	height: 60%;
-	z-index: 2;
-}
-
 .svg-container {
-	border: 3px solid green;
-	width: 100%;
-	top: 0; bottom: 0;
+	top: 0; bottom: 0; left: 0; right: 0;
 }
 
 #axys {
 	padding: 15px;
+	width: 100%;
 }
 
-#arrow {
+.arrow {
 	width: 30px;
 	height: 30px;
 }
 
-.aTop {
+#aTop {
 	top: 0;
 }
 
-.aRight {
+#aRight {
 	right: 0; 
 }
 
-.aBottom {
+#aBottom {
 	bottom: 0;
 }
 
-.aLeft {
+#aLeft {
 	left: 0;
 }
 
-.aRight, .aLeft {
+#aRight, #aLeft {
 	top: 50%;
 	transform: translateY(-50%);
 }
@@ -106,16 +104,74 @@ body {
 	stroke: rgba(38, 255, 0, .9);
 }
 
-#arrow polygon {
+.arrow polygon {
 	stroke: black;
 	stroke-width: 4;
 }
 
-.aTop, .aBottom polygon {
+#aTop, #aBottom polygon {
 	fill: rgba(38, 255, 0, .9);
 }
 
-.aLeft, .aRight polygon {
+#aLeft, #aRight polygon {
 	fill: rgba(255, 0, 0, .9);
 }
 /* end - svg styles*/
+
+#xScreen, #yScreen {
+	margin: 0 auto;
+	white-space: nowrap;
+	text-align: right;
+	font-size: 1rem;
+}
+
+#xScreen::first-letter, #yScreen::first-letter {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+#xScreen {
+	right: 31px;
+	top: 50%;
+  	transform: translateY(15%);
+}
+
+#xScreen::first-letter {
+	color: rgba(255, 0, 0, 1);
+}
+
+#yScreen {
+	bottom: 31px;
+	writing-mode: vertical-rl;
+  	transform: translateX(-65%);
+}
+
+#yScreen::first-letter {
+	color: rgba(38, 255, 0, 1);
+}
+
+.box {
+	border: 3px solid black;
+	width: 50%;
+	height: 50%;
+	z-index: 2;
+	background-color: rgba(255, 255, 255, 0.95);
+	text-align: center;
+}
+
+h1, h2 {
+	margin: 0;
+}
+
+h1 {
+	font-size: calc(.5rem + 3vmax);
+}
+
+h2 {
+	font-size: calc(.5rem + 2vmax);
+}
+
+p {
+	font-size: calc(.5rem + 1vmax);
+	padding: 0px 10px;
+}
